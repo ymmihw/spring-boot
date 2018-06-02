@@ -1,5 +1,6 @@
 package com.ymmihw.spring.boot;
 
+import javax.persistence.EntityManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 import com.ymmihw.spring.boot.SqlLoggingTest.TestConfig;
 
 @RunWith(SpringRunner.class)
@@ -37,4 +39,12 @@ public class SqlLoggingTest {
     jdbcTemplate.update("insert into foo (id, name) values (null, ?)", "abc");
   }
 
+  @Autowired
+  EntityManager entityManager;
+
+  @Test
+  @Transactional
+  public void givenEntityManager_whenSave_thenOK() {
+    entityManager.persist(new Foo());
+  }
 }
