@@ -7,3 +7,4 @@ deploy-into-tomcat | [Deploy a Spring Boot WAR into a Tomcat Server](http://www.
 favicon | [Guide to the Favicon in Spring Boot](http://www.baeldung.com/spring-boot-favicon)
 custom-error-page | [Spring Boot: Customize Whitelabel Error Page](http://www.baeldung.com/spring-boot-custom-error-page)
 sql-logging | [Show Hibernate/JPA SQL Statements from Spring Boot](http://www.baeldung.com/sql-logging-spring-boot)
+shutdown-boot-app | [Shutdown a Spring Boot Application](http://www.baeldung.com/spring-boot-shutdown)
