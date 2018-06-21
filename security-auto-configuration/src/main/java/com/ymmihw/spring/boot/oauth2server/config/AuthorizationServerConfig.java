@@ -21,12 +21,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   }
 
   @Override
-  public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-    clients.inMemory().withClient("baeldung").secret("baeldung")
+  public void configure(ClientDetailsServiceConfigurer clients) throws Exception {// @formatter:off
+    clients.inMemory()
+      .withClient("baeldung").secret("baeldung")
         .authorizedGrantTypes("client_credentials", "password", "authorization_code")
-        .scopes("openid", "read").autoApprove(true).and().withClient("baeldung-admin")
-        .secret("baeldung")
+        .scopes("openid", "read").autoApprove(true).and()
+      .withClient("baeldung-admin").secret("baeldung")
         .authorizedGrantTypes("authorization_code", "client_credentials", "refresh_token")
         .scopes("read", "write").autoApprove(true);
-  }
+  }// @formatter:on
 }
