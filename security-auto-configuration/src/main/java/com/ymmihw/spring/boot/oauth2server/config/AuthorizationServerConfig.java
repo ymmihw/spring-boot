@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 
 @Configuration
 @Profile("authz")
@@ -30,4 +31,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         .authorizedGrantTypes("authorization_code", "client_credentials", "refresh_token")
         .scopes("read", "write").autoApprove(true);
   }// @formatter:on
+
+  @Override
+  public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+    oauthServer.checkTokenAccess("permitAll()");
+  }
 }
