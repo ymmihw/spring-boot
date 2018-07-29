@@ -1,5 +1,6 @@
 package com.ymmihw.spring.boot.actuator1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,10 +10,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+  @Autowired
+  private CustomAuthenticationProvider authProvider;
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("1").password("1").roles("USER", "ACTUATOR");
+    // auth.inMemoryAuthentication().withUser("1").password("1").roles("USER", "ACTUATOR");
+    auth.authenticationProvider(authProvider);
   }
 
   @Override
