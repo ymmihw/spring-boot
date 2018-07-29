@@ -10,3 +10,4 @@ sql-logging | [Show Hibernate/JPA SQL Statements from Spring Boot](http://www.ba
 shutdown-boot-app | [Shutdown a Spring Boot Application](http://www.baeldung.com/spring-boot-shutdown)
 annotation-ConfigurationProperties | [Guide to @ConfigurationProperties in Spring Boot](http://www.baeldung.com/configuration-properties-in-spring-boot)
 security-auto-configuration | [Spring Boot Security Auto-Configuration](http://www.baeldung.com/spring-boot-security-autoconfiguration)
+spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
