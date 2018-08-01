@@ -1,6 +1,7 @@
 package com.ymmihw.spring.boot.actuator2;
 
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 import org.springframework.boot.actuate.endpoint.web.WebEndpointResponse;
 import org.springframework.boot.actuate.endpoint.web.annotation.EndpointWebExtension;
@@ -10,10 +11,8 @@ import org.springframework.stereotype.Component;
 @Component
 @EndpointWebExtension(endpoint = InfoEndpoint.class)
 public class InfoWebEndpointExtension {
-
+  @Autowired
   private InfoEndpoint delegate;
-
-  // standard constructor
 
   @ReadOperation
   public WebEndpointResponse<Map<String, Object>> info() {
