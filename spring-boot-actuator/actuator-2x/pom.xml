@@ -29,11 +29,6 @@
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-actuator</artifactId>
   </dependency>
-  <dependency>
-   <groupId>pl.project13.maven</groupId>
-   <artifactId>git-commit-id-plugin</artifactId>
-   <version>2.2.4</version>
-  </dependency>
  </dependencies>
  <build>
   <plugins>
@@ -44,6 +39,25 @@
      <execution>
       <goals>
        <goal>build-info</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>pl.project13.maven</groupId>
+    <artifactId>git-commit-id-plugin</artifactId>
+   </plugin>
+   <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+     <mainClass>com.ymmihw.spring.boot.actuator2.Application</mainClass>
+     <layout>ZIP</layout>
+    </configuration>
+    <executions>
+     <execution>
+      <goals>
+       <goal>repackage</goal>
       </goals>
      </execution>
     </executions>
