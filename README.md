@@ -11,3 +11,4 @@ shutdown-boot-app | [Shutdown a Spring Boot Application](http://www.baeldung.com
 annotation-ConfigurationProperties | [Guide to @ConfigurationProperties in Spring Boot](http://www.baeldung.com/configuration-properties-in-spring-boot)
 security-auto-configuration | [Spring Boot Security Auto-Configuration](http://www.baeldung.com/spring-boot-security-autoconfiguration)
 spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
+custom-validation-message-source | [Custom Validation MessageSource in Spring Boot](https://www.baeldung.com/spring-custom-validation-message-source)
