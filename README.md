@@ -12,3 +12,4 @@ annotation-ConfigurationProperties | [Guide to @ConfigurationProperties in Sprin
 security-auto-configuration | [Spring Boot Security Auto-Configuration](http://www.baeldung.com/spring-boot-security-autoconfiguration)
 spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
 custom-validation-message-source | [Custom Validation MessageSource in Spring Boot](https://www.baeldung.com/spring-custom-validation-message-source)
+spring-boot-embedded-mongodb | [Spring Boot Integration Testing with Embedded MongoDB](https://www.baeldung.com/spring-boot-embedded-mongodb)
