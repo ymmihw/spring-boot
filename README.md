@@ -14,3 +14,4 @@ spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boo
 custom-validation-message-source | [Custom Validation MessageSource in Spring Boot](https://www.baeldung.com/spring-custom-validation-message-source)
 spring-boot-embedded-mongodb | [Spring Boot Integration Testing with Embedded MongoDB](https://www.baeldung.com/spring-boot-embedded-mongodb)
 spring-boot-ctx-fluent | [Context Hierarchy with the Spring Boot Fluent Builder API](https://www.baeldung.com/spring-boot-context-hierarchy)
+spring-boot-keycloak | [A Quick Guide to Using Keycloak with Spring Boot](https://www.baeldung.com/spring-boot-keycloak)
