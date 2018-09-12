@@ -46,7 +46,6 @@ public class WebSecurityConfigIntegrationTest {
   @Test
   public void whenFormLoginWithSuccess_ThenApiEndpointsAreAccessible() throws Exception {
     mockMvc.perform(formLogin("/login").user("admin").password("admin"));
-
     mockMvc.perform(get("/actuator/env")).andExpect(status().is2xxSuccessful());
   }
 
