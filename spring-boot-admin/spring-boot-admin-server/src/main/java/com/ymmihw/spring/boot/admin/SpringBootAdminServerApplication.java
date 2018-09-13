@@ -18,7 +18,7 @@ public class SpringBootAdminServerApplication {
     SpringApplication.run(SpringBootAdminServerApplication.class, args);
   }
 
-  @Bean
+//  @Bean
   public InstanceExchangeFilterFunction auditLog() {
     return (instance, request, next) -> {
       if (HttpMethod.DELETE.equals(request.method()) || HttpMethod.POST.equals(request.method())) {

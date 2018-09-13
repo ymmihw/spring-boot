@@ -46,19 +46,19 @@ public class WebSecurityConfigIntegrationTest {
 
   @Test
   public void whenFormLoginWithSuccess_ThenApiEndpointsAreAccessible() throws Exception {
-    mockMvc.perform(get("/actuator/env").with(user("admin").password("admin")))
+    mockMvc.perform(get("/applications").with(user("admin").password("admin")))
         .andExpect(status().is2xxSuccessful());
   }
 
   @Test
   public void whenHttpBasicAttempted_ThenSuccess() throws Exception {
-    mockMvc.perform(get("/actuator/env").with(httpBasic("admin", "admin")))
+    mockMvc.perform(get("/applications").with(httpBasic("admin", "admin")))
         .andExpect(status().is2xxSuccessful());
   }
 
   @Test
   public void whenInvalidHttpBasicAttempted_ThenUnauthorized() throws Exception {
-    mockMvc.perform(get("/actuator/env").with(httpBasic("admin", "invalid")))
+    mockMvc.perform(get("/applications").with(httpBasic("admin", "invalid")))
         .andExpect(status().isUnauthorized());
   }
 

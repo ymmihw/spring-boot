@@ -1,6 +1,5 @@
 package com.ymmihw.spring.boot.admin.configs;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -8,10 +7,8 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import de.codecentric.boot.admin.server.config.AdminServerProperties;
 
-@Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
   private final String adminContextPath;
 
   public WebSecurityConfig(AdminServerProperties adminServerProperties) {
@@ -20,27 +17,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    // @formatter:off
-      SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
-      successHandler.setTargetUrlParameter("redirectTo");
-      successHandler.setDefaultTargetUrl(adminContextPath + "/");
 
-      http.authorizeRequests()
-          .antMatchers(adminContextPath + "/assets/**").permitAll() // <1>
-          .antMatchers(adminContextPath + "/login").permitAll()
-          .antMatchers(adminContextPath + "/login.html").permitAll()
-          .antMatchers(adminContextPath + "/actuator/env").authenticated()
-          .anyRequest().authenticated() // <2>
-          .and()
-      .formLogin().loginPage(adminContextPath + "/login").successHandler(successHandler).and() // <3>
-      .logout().logoutUrl(adminContextPath + "/logout").and()
-      .httpBasic().and() // <4>
-      .csrf()
-          .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())  // <5>
-          .ignoringAntMatchers(
-              adminContextPath + "/instances",   // <6>
-              adminContextPath + "/actuator/**"  // <7>
-          );
-      // @formatter:on
+    SavedRequestAwareAuthenticationSuccessHandler successHandler =
+        new SavedRequestAwareAuthenticationSuccessHandler();
+    successHandler.setTargetUrlParameter("redirectTo");
+    successHandler.setDefaultTargetUrl("/");
+
+    // @formatter:off
+    http.authorizeRequests()
+        .antMatchers(adminContextPath + "/assets/**").permitAll() 
+        .antMatchers(adminContextPath + "/login").permitAll()
+        .antMatchers(adminContextPath + "/logout").permitAll()
+        .antMatchers(adminContextPath + "/login.html").permitAll()
+        .antMatchers(adminContextPath + "/actuator/env").authenticated()
+        .anyRequest().authenticated() 
+        .and()
+    .formLogin().loginPage(adminContextPath + "/login").successHandler(successHandler).and()
+    .logout().logoutUrl(adminContextPath + "/logout").and()
+    .httpBasic().and() 
+    .csrf()
+        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())  
+        .ignoringAntMatchers(
+            adminContextPath + "/instances",   
+            adminContextPath + "/actuator/**"  
+        );
+    // @formatter:on
   }
 }
