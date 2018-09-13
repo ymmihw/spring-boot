@@ -2,6 +2,7 @@ package com.ymmihw.spring.boot.admin;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import javax.servlet.Filter;
@@ -45,8 +46,8 @@ public class WebSecurityConfigIntegrationTest {
 
   @Test
   public void whenFormLoginWithSuccess_ThenApiEndpointsAreAccessible() throws Exception {
-    mockMvc.perform(formLogin("/login").user("admin").password("admin"));
-    mockMvc.perform(get("/actuator/env")).andExpect(status().is2xxSuccessful());
+    mockMvc.perform(get("/actuator/env").with(user("admin").password("admin")))
+        .andExpect(status().is2xxSuccessful());
   }
 
   @Test
