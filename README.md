@@ -16,3 +16,4 @@ spring-boot-embedded-mongodb | [Spring Boot Integration Testing with Embedded Mo
 spring-boot-ctx-fluent | [Context Hierarchy with the Spring Boot Fluent Builder API](https://www.baeldung.com/spring-boot-context-hierarchy)
 spring-boot-keycloak | [A Quick Guide to Using Keycloak with Spring Boot](https://www.baeldung.com/spring-boot-keycloak)
 spring-boot-admin | [A Guide to Spring Boot Admin](https://www.baeldung.com/spring-boot-admin)
+auto-property-expansion | [Automatic Property Expansion with Spring Boot](https://www.baeldung.com/spring-boot-auto-property-expansion)
