@@ -17,3 +17,4 @@ spring-boot-ctx-fluent | [Context Hierarchy with the Spring Boot Fluent Builder 
 spring-boot-keycloak | [A Quick Guide to Using Keycloak with Spring Boot](https://www.baeldung.com/spring-boot-keycloak)
 spring-boot-admin | [A Guide to Spring Boot Admin](https://www.baeldung.com/spring-boot-admin)
 auto-property-expansion | [Automatic Property Expansion with Spring Boot](https://www.baeldung.com/spring-boot-auto-property-expansion)
+custom-auto-configuration | [Create a Custom Auto-Configuration with Spring Boot](http://www.baeldung.com/spring-boot-custom-auto-configuration)
