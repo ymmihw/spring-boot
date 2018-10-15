@@ -20,5 +20,6 @@
  </dependencies>
  <modules>
   <module>greeter-library</module>
+  <module>greeter-spring-boot-autoconfigure</module>
  </modules>
 </project>
