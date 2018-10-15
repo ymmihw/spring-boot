@@ -21,5 +21,7 @@
  <modules>
   <module>greeter-library</module>
   <module>greeter-spring-boot-autoconfigure</module>
+  <module>greeter-spring-boot-starter</module>
+  <module>greeter-spring-boot-sample-app</module>
  </modules>
 </project>
