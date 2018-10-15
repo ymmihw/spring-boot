@@ -18,3 +18,4 @@ spring-boot-keycloak | [A Quick Guide to Using Keycloak with Spring Boot](https:
 spring-boot-admin | [A Guide to Spring Boot Admin](https://www.baeldung.com/spring-boot-admin)
 auto-property-expansion | [Automatic Property Expansion with Spring Boot](https://www.baeldung.com/spring-boot-auto-property-expansion)
 custom-auto-configuration | [Create a Custom Auto-Configuration with Spring Boot](http://www.baeldung.com/spring-boot-custom-auto-configuration)
+spring-boot-custom-starter | [Creating a Custom Starter with Spring Boot](http://www.baeldung.com/spring-boot-custom-starter)
