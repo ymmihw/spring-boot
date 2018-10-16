@@ -22,4 +22,5 @@ spring-boot-custom-starter | [Creating a Custom Starter with Spring Boot](http:/
 ### spring-boot-actuator
 Module | Article
 --|--
-spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
+spring-boot-actuator-intro | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
+spring-boot-actuator-custom-info | [Custom Information in Spring Boot Info Endpoint](https://www.baeldung.com/spring-boot-info-actuator-custom)
