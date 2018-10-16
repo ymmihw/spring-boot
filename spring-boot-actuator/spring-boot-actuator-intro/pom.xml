@@ -3,15 +3,15 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <modelVersion>4.0.0</modelVersion>
  <parent>
-  <groupId>com.ymmihw.spring</groupId>
-  <artifactId>spring-boot</artifactId>
+  <groupId>com.ymmihw.spring.boot</groupId>
+  <artifactId>spring-boot-actuator</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
- <groupId>com.ymmihw.spring.boot</groupId>
- <artifactId>spring-boot-actuator</artifactId>
+ <groupId>com.ymmihw.spring.boot.actuator</groupId>
+ <artifactId>spring-boot-actuator-intro</artifactId>
  <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
- <name>spring-boot-actuator</name>
+ <name>spring-boot-actuator-intro</name>
  <url>http://maven.apache.org</url>
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

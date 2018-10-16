@@ -1,4 +1,4 @@
-### Relevant Articles: 
+## Relevant Articles: 
 
 Module | Article
 --|--
@@ -10,7 +10,6 @@ sql-logging | [Show Hibernate/JPA SQL Statements from Spring Boot](http://www.ba
 shutdown-boot-app | [Shutdown a Spring Boot Application](http://www.baeldung.com/spring-boot-shutdown)
 annotation-ConfigurationProperties | [Guide to @ConfigurationProperties in Spring Boot](http://www.baeldung.com/configuration-properties-in-spring-boot)
 security-auto-configuration | [Spring Boot Security Auto-Configuration](http://www.baeldung.com/spring-boot-security-autoconfiguration)
-spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
 custom-validation-message-source | [Custom Validation MessageSource in Spring Boot](https://www.baeldung.com/spring-custom-validation-message-source)
 spring-boot-embedded-mongodb | [Spring Boot Integration Testing with Embedded MongoDB](https://www.baeldung.com/spring-boot-embedded-mongodb)
 spring-boot-ctx-fluent | [Context Hierarchy with the Spring Boot Fluent Builder API](https://www.baeldung.com/spring-boot-context-hierarchy)
@@ -19,3 +18,8 @@ spring-boot-admin | [A Guide to Spring Boot Admin](https://www.baeldung.com/spri
 auto-property-expansion | [Automatic Property Expansion with Spring Boot](https://www.baeldung.com/spring-boot-auto-property-expansion)
 custom-auto-configuration | [Create a Custom Auto-Configuration with Spring Boot](http://www.baeldung.com/spring-boot-custom-auto-configuration)
 spring-boot-custom-starter | [Creating a Custom Starter with Spring Boot](http://www.baeldung.com/spring-boot-custom-starter)
+
+### spring-boot-actuator
+Module | Article
+--|--
+spring-boot-actuator | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
