@@ -20,6 +20,7 @@ custom-auto-configuration | [Create a Custom Auto-Configuration with Spring Boot
 spring-boot-custom-starter | [Creating a Custom Starter with Spring Boot](http://www.baeldung.com/spring-boot-custom-starter)
 spring-boot-failure-analyzer | [Create a Custom FailureAnalyzer with Spring Boot](https://www.baeldung.com/spring-boot-failure-analyzer)
 spring-boot-test-rest-template | [Exploring the Spring Boot TestRestTemplate](https://www.baeldung.com/spring-boot-testresttemplate)
+spring-boot-internationalization | [Guide to Internationalization in Spring Boot](http://www.baeldung.com/spring-boot-internationalization)
 
 ### spring-boot-actuator
 Module | Article
