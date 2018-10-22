@@ -26,3 +26,4 @@ Module | Article
 --|--
 spring-boot-actuator-intro | [Spring Boot Actuator](http://www.baeldung.com/spring-boot-actuators)
 spring-boot-actuator-custom-info | [Custom Information in Spring Boot Info Endpoint](https://www.baeldung.com/spring-boot-info-actuator-custom)
+spring-boot-actuator-authentication-audit | [Spring Boot Authentication Auditing Support](http://www.baeldung.com/spring-boot-authentication-audit)
