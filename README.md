@@ -21,6 +21,9 @@ spring-boot-custom-starter | [Creating a Custom Starter with Spring Boot](http:/
 spring-boot-failure-analyzer | [Create a Custom FailureAnalyzer with Spring Boot](https://www.baeldung.com/spring-boot-failure-analyzer)
 spring-boot-test-rest-template | [Exploring the Spring Boot TestRestTemplate](https://www.baeldung.com/spring-boot-testresttemplate)
 spring-boot-internationalization | [Guide to Internationalization in Spring Boot](http://www.baeldung.com/spring-boot-internationalization)
+spring-boot-servletcomponentscan | [The @ServletComponentScan Annotation in Spring Boot](https://www.baeldung.com/spring-servletcomponentscan) 
+
+
 
 ### spring-boot-actuator
 Module | Article
