@@ -2,9 +2,7 @@ package com.ymmihw.spring.boot;
 
 import static org.junit.Assert.assertEquals;
 import java.util.Collections;
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.HttpClients;
