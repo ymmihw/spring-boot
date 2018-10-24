@@ -22,7 +22,7 @@ spring-boot-failure-analyzer | [Create a Custom FailureAnalyzer with Spring Boot
 spring-boot-test-rest-template | [Exploring the Spring Boot TestRestTemplate](https://www.baeldung.com/spring-boot-testresttemplate)
 spring-boot-internationalization | [Guide to Internationalization in Spring Boot](http://www.baeldung.com/spring-boot-internationalization)
 spring-boot-servletcomponentscan | [The @ServletComponentScan Annotation in Spring Boot](https://www.baeldung.com/spring-servletcomponentscan) 
-
+spring-boot-https-self-signed-certificate | [HTTPS using Self-Signed Certificate in Spring Boot](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
 
 
 ### spring-boot-actuator
