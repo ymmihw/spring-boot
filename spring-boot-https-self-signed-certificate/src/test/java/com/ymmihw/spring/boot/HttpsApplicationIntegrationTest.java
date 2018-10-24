@@ -25,7 +25,7 @@ import org.springframework.web.client.RestTemplate;
     webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class HttpsApplicationIntegrationTest {
 
-  private static final String WELCOME_URL = "https://192.168.10.108:8443/welcome";
+  private static final String WELCOME_URL = "https://localhost:8443/welcome";
 
   @Value("${trust.store}")
   private Resource trustStore;
@@ -46,12 +46,8 @@ public class HttpsApplicationIntegrationTest {
     SSLContext sslContext = new SSLContextBuilder()
         .loadTrustMaterial(trustStore.getURL(), trustStorePassword.toCharArray()).build();
     SSLConnectionSocketFactory socketFactory =
-        new SSLConnectionSocketFactory(sslContext, new HostnameVerifier() {
-          @Override
-          public boolean verify(String hostname, SSLSession session) {
-            return true;
-          }
-        });
+        new SSLConnectionSocketFactory(sslContext, (hostname, session) -> true);
+
     HttpClient httpClient = HttpClients.custom().setSSLSocketFactory(socketFactory).build();
     HttpComponentsClientHttpRequestFactory factory =
         new HttpComponentsClientHttpRequestFactory(httpClient);
