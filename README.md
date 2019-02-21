@@ -23,7 +23,7 @@ spring-boot-test-rest-template | [Exploring the Spring Boot TestRestTemplate](ht
 spring-boot-internationalization | [Guide to Internationalization in Spring Boot](http://www.baeldung.com/spring-boot-internationalization)
 spring-boot-servletcomponentscan | [The @ServletComponentScan Annotation in Spring Boot](https://www.baeldung.com/spring-servletcomponentscan) 
 spring-boot-https-self-signed-certificate | [HTTPS using Self-Signed Certificate in Spring Boot](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
-
+soap-web-service | [Spring Boot - SOAP Web Service](https://www.baeldung.com/spring-boot-soap-web-service)
 
 ### spring-boot-actuator
 Module | Article
