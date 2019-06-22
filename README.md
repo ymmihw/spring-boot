@@ -25,7 +25,7 @@ spring-boot-servletcomponentscan | [The @ServletComponentScan Annotation in Spri
 spring-boot-https-self-signed-certificate | [HTTPS using Self-Signed Certificate in Spring Boot](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
 soap-web-service | [Spring Boot - SOAP Web Service](https://www.baeldung.com/spring-boot-soap-web-service)
 spring-boot-ehcache | [Spring Boot Ehcache Example](https://www.baeldung.com/spring-boot-ehcache)
-
+spring-boot-rsocket | [RSocket Using Spring Boot](https://www.baeldung.com/spring-boot-rsocket)
 
 ### spring-boot-actuator
 Module | Article
