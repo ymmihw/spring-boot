@@ -38,4 +38,32 @@
    </plugin>
   </plugins>
  </build>
+ <modules>
+  <module>annotation-ConfigurationProperties</module>
+  <module>auto-property-expansion</module>
+  <module>custom-auto-configuration</module>
+  <module>custom-error-page</module>
+  <module>custom-validation-message-source</module>
+  <module>deploy-into-tomcat</module>
+  <module>exit-codes</module>
+  <module>favicon</module>
+  <module>security-auto-configuration</module>
+  <module>shutdown-boot-app</module>
+  <module>soap-web-service</module>
+  <module>spring-boot-actuator</module>
+  <module>spring-boot-admin</module>
+  <module>spring-boot-ctx-fluent</module>
+  <module>spring-boot-custom-starter</module>
+  <module>spring-boot-ehcache</module>
+  <module>spring-boot-embedded-mongodb</module>
+  <module>spring-boot-failure-analyzer</module>
+  <module>spring-boot-filters</module>
+  <module>spring-boot-https-self-signed-certificate</module>
+  <module>spring-boot-internationalization</module>
+  <module>spring-boot-keycloak</module>
+  <module>spring-boot-rsocket</module>
+  <module>spring-boot-servletcomponentscan</module>
+  <module>spring-boot-test-rest-template</module>
+  <module>sql-logging</module>
+ </modules>
 </project>

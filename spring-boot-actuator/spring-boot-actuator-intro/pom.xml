@@ -18,4 +18,8 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>actuator-1x</module>
+  <module>actuator-2x</module>
+ </modules>
 </project>

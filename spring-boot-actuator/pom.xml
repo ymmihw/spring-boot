@@ -26,4 +26,9 @@
    <artifactId>spring-boot-starter-actuator</artifactId>
   </dependency>
  </dependencies>
+ <modules>
+  <module>spring-boot-actuator-authentication-audit</module>
+  <module>spring-boot-actuator-custom-info</module>
+  <module>spring-boot-actuator-intro</module>
+ </modules>
 </project>
