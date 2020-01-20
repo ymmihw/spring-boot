@@ -32,20 +32,20 @@ import org.springframework.util.ClassUtils;
 @Configuration
 @ConditionalOnClass(DataSource.class)
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
-@PropertySource("classpath:mysql.properties")
-public class MySQLAutoconfiguration {
+@PropertySource("classpath:h2.properties")
+public class H2Autoconfiguration {
 
   @Autowired
   private Environment env;
 
   @Bean
-  @ConditionalOnProperty(name = "usemysql", havingValue = "local")
+  @ConditionalOnProperty(name = "useH2", havingValue = "local")
   @ConditionalOnMissingBean
   public DataSource dataSource() {
     final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-    dataSource.setUrl("jdbc:mysql://192.168.10.63:3306/myDb?createDatabaseIfNotExist=true");
+    dataSource.setDriverClassName("org.h2.Driver");
+    dataSource.setUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1");
     dataSource.setUsername("root");
     dataSource.setPassword("root");
 
@@ -53,17 +53,15 @@ public class MySQLAutoconfiguration {
   }
 
   @Bean(name = "dataSource")
-  @ConditionalOnProperty(name = "usemysql", havingValue = "custom")
+  @ConditionalOnProperty(name = "useH2", havingValue = "custom")
   @ConditionalOnMissingBean
   public DataSource dataSource2() {
     final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-    dataSource.setUrl(env.getProperty("mysql.url"));
-    dataSource
-        .setUsername(env.getProperty("mysql.user") != null ? env.getProperty("mysql.user") : "");
-    dataSource
-        .setPassword(env.getProperty("mysql.pass") != null ? env.getProperty("mysql.pass") : "");
+    dataSource.setDriverClassName("org.h2.Driver");
+    dataSource.setUrl(env.getProperty("h2.url"));
+    dataSource.setUsername(env.getProperty("h2.user") != null ? env.getProperty("h2.user") : "");
+    dataSource.setPassword(env.getProperty("h2.pass") != null ? env.getProperty("h2.pass") : "");
 
     return dataSource;
   }
@@ -90,18 +88,16 @@ public class MySQLAutoconfiguration {
     return transactionManager;
   }
 
-  @ConditionalOnResource(resources = "classpath:mysql.properties")
+  @ConditionalOnResource(resources = "classpath:h2.properties")
   @Conditional(HibernateCondition.class)
   final Properties additionalProperties() {
     final Properties hibernateProperties = new Properties();
 
     hibernateProperties.setProperty("hibernate.hbm2ddl.auto",
-        env.getProperty("mysql-hibernate.hbm2ddl.auto"));
-    hibernateProperties.setProperty("hibernate.dialect",
-        env.getProperty("mysql-hibernate.dialect"));
+        env.getProperty("h2-hibernate.hbm2ddl.auto"));
+    hibernateProperties.setProperty("hibernate.dialect", env.getProperty("h2-hibernate.dialect"));
     hibernateProperties.setProperty("hibernate.show_sql",
-        env.getProperty("mysql-hibernate.show_sql") != null
-            ? env.getProperty("mysql-hibernate.show_sql")
+        env.getProperty("h2-hibernate.show_sql") != null ? env.getProperty("h2-hibernate.show_sql")
             : "false");
 
     return hibernateProperties;
