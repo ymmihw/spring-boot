@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ymmihw.spring.boot.ehcache.service.NumberService;
 
 @RestController
-@RequestMapping(path = "/number", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(path = "/number", produces = MediaType.APPLICATION_JSON_VALUE)
 public class NumberController {
 
   private final static Logger log = LoggerFactory.getLogger(NumberController.class);

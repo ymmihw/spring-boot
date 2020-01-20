@@ -18,8 +18,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.MimeTypeUtils;
 import com.ymmihw.spring.boot.rsocket.model.MarketData;
 import com.ymmihw.spring.boot.rsocket.model.MarketDataRequest;
-import io.rsocket.RSocket;
-import io.rsocket.RSocketFactory;
 import io.rsocket.frame.decoder.PayloadDecoder;
 import io.rsocket.transport.netty.client.TcpClientTransport;
 
@@ -47,9 +45,8 @@ public class MarketDataRSocketControllerLiveTest {
   @Test
   public void whenGetsRequest_ThenReturnsResponse() throws InterruptedException {
     final MarketDataRequest marketDataRequest = new MarketDataRequest("X");
-    rSocketRequester.route("currentMarketData").data(marketDataRequest).send()
-        .block(Duration.ofSeconds(10));
-
+    rSocketRequester.route("currentMarketData").data(marketDataRequest)
+        .retrieveMono(MarketData.class).subscribe();
     sleepForProcessing();
     verify(rSocketController).currentMarketData(any());
   }
@@ -57,9 +54,8 @@ public class MarketDataRSocketControllerLiveTest {
   @Test
   public void whenGetsRequest_ThenReturnsStream() throws InterruptedException {
     final MarketDataRequest marketDataRequest = new MarketDataRequest("X");
-    rSocketRequester.route("feedMarketData").data(marketDataRequest).send()
-        .block(Duration.ofSeconds(10));
-
+    rSocketRequester.route("feedMarketData").data(marketDataRequest).retrieveFlux(MarketData.class)
+        .subscribe();
     sleepForProcessing();
     verify(rSocketController).feedMarketData(any());
   }
@@ -73,17 +69,12 @@ public class MarketDataRSocketControllerLiveTest {
 
     @Bean
     @Lazy
-    public RSocket rSocket() {
-      return RSocketFactory.connect()
-          .mimeType(MimeTypeUtils.APPLICATION_JSON_VALUE, MimeTypeUtils.APPLICATION_JSON_VALUE)
-          .frameDecoder(PayloadDecoder.ZERO_COPY).transport(TcpClientTransport.create(7000)).start()
-          .block();
-    }
-
-    @Bean
-    @Lazy
     RSocketRequester rSocketRequester(RSocketStrategies rSocketStrategies) {
-      return RSocketRequester.wrap(rSocket(), MimeTypeUtils.APPLICATION_JSON, rSocketStrategies);
+      return RSocketRequester.builder()
+          .rsocketFactory(factory -> factory.dataMimeType(MimeTypeUtils.ALL_VALUE)
+              .frameDecoder(PayloadDecoder.ZERO_COPY))
+          .rsocketStrategies(rSocketStrategies).connect(TcpClientTransport.create(7000)).retry()
+          .block();
     }
   }
 }

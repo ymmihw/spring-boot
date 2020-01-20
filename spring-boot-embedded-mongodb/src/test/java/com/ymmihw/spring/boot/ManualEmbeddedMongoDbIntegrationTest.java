@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
+import com.mongodb.client.MongoClients;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodStarter;
 import de.flapdoodle.embed.mongo.config.IMongodConfig;
@@ -44,12 +44,17 @@ public class ManualEmbeddedMongoDbIntegrationTest {
         EnumSet<Feature> features = Feature.asSet(Feature.SYNC_DELAY, Feature.STORAGE_ENGINE);
         return features.contains(feature);
       }
+
+      @Override
+      public EnumSet<Feature> getFeatures() {
+        return null;
+      }
     }).net(new Net(ip, port, Network.localhostIsIPv6())).build();
 
     MongodStarter starter = MongodStarter.getDefaultInstance();
     mongodExecutable = starter.prepare(mongodConfig);
     mongodExecutable.start();
-    mongoTemplate = new MongoTemplate(new MongoClient(ip, port), "test");
+    mongoTemplate = new MongoTemplate(MongoClients.create("mongodb://" + ip + ":" + port), "test");
 
   }
 
