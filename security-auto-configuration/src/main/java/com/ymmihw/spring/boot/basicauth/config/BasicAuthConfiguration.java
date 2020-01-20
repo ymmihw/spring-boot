@@ -14,9 +14,10 @@ public class BasicAuthConfiguration extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    
     PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
     auth.inMemoryAuthentication().withUser("user").password(passwordEncoder.encode("password"))
-        .roles("USER").and().withUser("admin").password("admin").roles("USER", "ADMIN");
+        .roles("USER").and().withUser("admin").password(passwordEncoder.encode("admin")).roles("USER", "ADMIN");
   }
 
   @Override
