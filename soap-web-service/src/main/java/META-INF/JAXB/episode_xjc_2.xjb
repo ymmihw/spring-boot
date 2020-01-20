@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.3.0 生成的
+请访问 <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+在重新编译源模式时, 对此文件的所有修改都将丢失。
+生成时间: 2020.01.20 时间 10:04:16 AM CST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.ymmihw.com/spring/boot/soap/gen">
+    <schemaBindings map="false">
+      <package name="com.ymmihw.spring.boot.soap.gen"/>
+    </schemaBindings>
+    <bindings scd="tns:getCountryRequest">
+      <class ref="com.ymmihw.spring.boot.soap.gen.GetCountryRequest"/>
+    </bindings>
+    <bindings scd="tns:getCountryResponse">
+      <class ref="com.ymmihw.spring.boot.soap.gen.GetCountryResponse"/>
+    </bindings>
+    <bindings scd="~tns:country">
+      <class ref="com.ymmihw.spring.boot.soap.gen.Country"/>
+    </bindings>
+    <bindings scd="~tns:currency">
+      <typesafeEnumClass ref="com.ymmihw.spring.boot.soap.gen.Currency"/>
+    </bindings>
+  </bindings>
+</bindings>
+

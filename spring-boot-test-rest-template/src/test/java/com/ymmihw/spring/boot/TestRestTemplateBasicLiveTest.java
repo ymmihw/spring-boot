@@ -5,27 +5,37 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Application.class,
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestRestTemplateBasicLiveTest {
-
-  private RestTemplateBuilder restTemplateBuilder;
-
-  private static final String FOO_RESOURCE_URL = "http://localhost:" + 8082 + "/spring-rest/foos";
   private static final String URL_SECURED_BY_AUTHENTICATION =
       "http://httpbin.org/basic-auth/user/passwd";
-  private static final String BASE_URL = "http://localhost:" + 8082 + "/spring-rest";
+  @LocalServerPort
+  private int port;
+
+  private RestTemplateBuilder restTemplateBuilder;
+  private String fooResourceUrl;
+  private String baseUrl;
 
   @Before
   public void beforeTest() {
     restTemplateBuilder = new RestTemplateBuilder();
+    fooResourceUrl = "http://localhost:" + port + "/spring-rest/foos";
+    baseUrl = "http://localhost:" + port + "/spring-rest";
   }
 
   // GET
@@ -33,7 +43,7 @@ public class TestRestTemplateBasicLiveTest {
   public void givenTestRestTemplate_whenSendGetForEntity_thenStatusOk() {
     TestRestTemplate testRestTemplate = new TestRestTemplate();
     ResponseEntity<String> response =
-        testRestTemplate.getForEntity(FOO_RESOURCE_URL + "/1", String.class);
+        testRestTemplate.getForEntity(fooResourceUrl + "/1", String.class);
     assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
   }
 
@@ -41,7 +51,7 @@ public class TestRestTemplateBasicLiveTest {
   public void givenRestTemplateWrapper_whenSendGetForEntity_thenStatusOk() {
     TestRestTemplate testRestTemplate = new TestRestTemplate(restTemplateBuilder);
     ResponseEntity<String> response =
-        testRestTemplate.getForEntity(FOO_RESOURCE_URL + "/1", String.class);
+        testRestTemplate.getForEntity(fooResourceUrl + "/1", String.class);
     assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
   }
 
@@ -49,7 +59,7 @@ public class TestRestTemplateBasicLiveTest {
   public void givenRestTemplateBuilderWrapper_whenSendGetForEntity_thenStatusOk() {
     TestRestTemplate testRestTemplate = new TestRestTemplate(restTemplateBuilder);
     ResponseEntity<String> response =
-        testRestTemplate.getForEntity(FOO_RESOURCE_URL + "/1", String.class);
+        testRestTemplate.getForEntity(fooResourceUrl + "/1", String.class);
     assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
   }
 
@@ -90,7 +100,7 @@ public class TestRestTemplateBasicLiveTest {
   @Test
   public void givenFooService_whenCallHeadForHeaders_thenReceiveAllHeaders() {
     TestRestTemplate testRestTemplate = new TestRestTemplate();
-    final HttpHeaders httpHeaders = testRestTemplate.headForHeaders(FOO_RESOURCE_URL);
+    final HttpHeaders httpHeaders = testRestTemplate.headForHeaders(fooResourceUrl);
     assertTrue(httpHeaders.getContentType().includes(MediaType.APPLICATION_JSON));
   }
 
@@ -100,8 +110,7 @@ public class TestRestTemplateBasicLiveTest {
     TestRestTemplate testRestTemplate = new TestRestTemplate("user", "passwd");
     final RequestBody body = RequestBody.create(okhttp3.MediaType.parse("text/html; charset=utf-8"),
         "{\"id\":1,\"name\":\"Jim\"}");
-    final Request request =
-        new Request.Builder().url(BASE_URL + "/users/detail").post(body).build();
+    final Request request = new Request.Builder().url(baseUrl + "/users/detail").post(body).build();
     testRestTemplate.postForObject(URL_SECURED_BY_AUTHENTICATION, request, String.class);
   }
 
@@ -111,8 +120,7 @@ public class TestRestTemplateBasicLiveTest {
     TestRestTemplate testRestTemplate = new TestRestTemplate("user", "passwd");
     final RequestBody body = RequestBody.create(okhttp3.MediaType.parse("text/html; charset=utf-8"),
         "{\"id\":1,\"name\":\"Jim\"}");
-    final Request request =
-        new Request.Builder().url(BASE_URL + "/users/detail").post(body).build();
+    final Request request = new Request.Builder().url(baseUrl + "/users/detail").post(body).build();
     testRestTemplate.put(URL_SECURED_BY_AUTHENTICATION, request, String.class);
   }
 
