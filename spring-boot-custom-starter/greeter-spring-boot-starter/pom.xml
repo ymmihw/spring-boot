@@ -10,7 +10,6 @@
  <groupId>com.ymmihw.spring.boot</groupId>
  <artifactId>greeter-spring-boot-starter</artifactId>
  <version>0.0.1-SNAPSHOT</version>
- <packaging>pom</packaging>
  <name>greeter-spring-boot-starter</name>
  <url>http://maven.apache.org</url>
  <properties>

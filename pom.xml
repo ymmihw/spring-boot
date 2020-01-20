@@ -53,7 +53,7 @@
   <module>spring-boot-actuator</module>
   <module>spring-boot-admin</module>
   <module>spring-boot-ctx-fluent</module>
-  <!-- <module>spring-boot-custom-starter</module> -->
+  <module>spring-boot-custom-starter</module>
   <module>spring-boot-ehcache</module>
   <module>spring-boot-embedded-mongodb</module>
   <module>spring-boot-failure-analyzer</module>
