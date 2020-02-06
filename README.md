@@ -34,3 +34,4 @@ spring-boot-actuator-intro | [Spring Boot Actuator](http://www.baeldung.com/spri
 spring-boot-actuator-custom-info | [Custom Information in Spring Boot Info Endpoint](https://www.baeldung.com/spring-boot-info-actuator-custom)
 spring-boot-actuator-authentication-audit | [Spring Boot Authentication Auditing Support](http://www.baeldung.com/spring-boot-authentication-audit)
 spring-boot-actuator-logging-request | [Logging HTTP Requests with Spring Boot Actuator HTTP Tracing](https://www.baeldung.com/spring-boot-actuator-http) 
+spring-boot-actuator-capture-request-and-response-body | [Monitor Your Java Apps with Spring Boot Actuator](https://developer.okta.com/blog/2019/07/17/monitoring-with-actuator#use-spring-boot-actuator-to-capture-request-and-response-body-contents)

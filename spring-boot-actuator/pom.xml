@@ -31,5 +31,6 @@
   <module>spring-boot-actuator-custom-info</module>
   <module>spring-boot-actuator-intro</module>
   <module>spring-boot-actuator-logging-request</module>
+  <module>spring-boot-actuator-capture-request-and-response-body</module>
  </modules>
 </project>
