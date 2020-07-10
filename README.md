@@ -13,7 +13,6 @@ security-auto-configuration | [Spring Boot Security Auto-Configuration](http://w
 custom-validation-message-source | [Custom Validation MessageSource in Spring Boot](https://www.baeldung.com/spring-custom-validation-message-source)
 spring-boot-embedded-mongodb | [Spring Boot Integration Testing with Embedded MongoDB](https://www.baeldung.com/spring-boot-embedded-mongodb)
 spring-boot-ctx-fluent | [Context Hierarchy with the Spring Boot Fluent Builder API](https://www.baeldung.com/spring-boot-context-hierarchy)
-spring-boot-keycloak | [A Quick Guide to Using Keycloak with Spring Boot](https://www.baeldung.com/spring-boot-keycloak)
 spring-boot-admin | [A Guide to Spring Boot Admin](https://www.baeldung.com/spring-boot-admin)
 auto-property-expansion | [Automatic Property Expansion with Spring Boot](https://www.baeldung.com/spring-boot-auto-property-expansion)
 custom-auto-configuration | [Create a Custom Auto-Configuration with Spring Boot](http://www.baeldung.com/spring-boot-custom-auto-configuration)
@@ -24,8 +23,6 @@ spring-boot-internationalization | [Guide to Internationalization in Spring Boot
 spring-boot-servletcomponentscan | [The @ServletComponentScan Annotation in Spring Boot](https://www.baeldung.com/spring-servletcomponentscan) 
 spring-boot-https-self-signed-certificate | [HTTPS using Self-Signed Certificate in Spring Boot](https://www.baeldung.com/spring-boot-https-self-signed-certificate)
 soap-web-service | [Spring Boot - SOAP Web Service](https://www.baeldung.com/spring-boot-soap-web-service)
-spring-boot-ehcache | [Spring Boot Ehcache Example](https://www.baeldung.com/spring-boot-ehcache)
-spring-boot-rsocket | [RSocket Using Spring Boot](https://www.baeldung.com/spring-boot-rsocket)
 
 ### spring-boot-actuator
 Module | Article
