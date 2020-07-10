@@ -27,8 +27,6 @@ public class CustomHttpTraceRepository implements HttpTraceRepository {
   public void add(HttpTrace trace) {
     synchronized (this.contents) {
       ContentTrace contentTrace = traceManager.getTrace();
-      System.out.println(this);
-      System.out.println(traceManager);
       contentTrace.setHttpTrace(trace);
       this.contents.add(0, contentTrace);
     }
