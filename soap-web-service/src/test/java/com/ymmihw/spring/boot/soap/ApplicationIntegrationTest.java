@@ -1,19 +1,19 @@
 package com.ymmihw.spring.boot.soap;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.util.ClassUtils;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import com.ymmihw.spring.boot.soap.gen.GetCountryRequest;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ApplicationIntegrationTest {
 
@@ -22,7 +22,7 @@ public class ApplicationIntegrationTest {
   @LocalServerPort
   private int port = 0;
 
-  @Before
+  @BeforeEach
   public void init() throws Exception {
     marshaller.setPackagesToScan(ClassUtils.getPackageName(GetCountryRequest.class));
     marshaller.afterPropertiesSet();
