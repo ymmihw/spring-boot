@@ -2,10 +2,9 @@ package com.ymmihw.spring.boot;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -14,11 +13,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class,
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestRestTemplateBasicLiveTest {
@@ -31,7 +28,7 @@ public class TestRestTemplateBasicLiveTest {
   private String fooResourceUrl;
   private String baseUrl;
 
-  @Before
+  @BeforeEach
   public void beforeTest() {
     restTemplateBuilder = new RestTemplateBuilder();
     fooResourceUrl = "http://localhost:" + port + "/spring-rest/foos";

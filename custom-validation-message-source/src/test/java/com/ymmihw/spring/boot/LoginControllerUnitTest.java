@@ -1,19 +1,18 @@
 package com.ymmihw.spring.boot;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.ymmihw.spring.boot.config.CustomMessageSourceConfiguration;
 
-@RunWith(SpringRunner.class)
+@SpringBootTest
 @WebMvcTest(value = LoginController.class)
 @ContextConfiguration(
     classes = {SpringBootMvcApplication.class, CustomMessageSourceConfiguration.class})
@@ -30,7 +29,7 @@ public class LoginControllerUnitTest {
         MockMvcRequestBuilders.post("/loginform").param("email", "").param("password", "helo");
 
     MvcResult perform = mockMvc.perform(builder).andReturn();
-    Assert.assertTrue(perform.getResolvedException().getMessage().contains("valid email"));
+    assertTrue(perform.getResolvedException().getMessage().contains("valid email"));
 
   }
 
@@ -41,7 +40,7 @@ public class LoginControllerUnitTest {
     RequestBuilder builder = MockMvcRequestBuilders.post("/loginform").param("email", "")
         .param("password", "helo").header("accept-language", "fr");
     MvcResult perform = mockMvc.perform(builder).andReturn();
-    Assert.assertTrue(perform.getResolvedException().getMessage().contains("fournir un"));
+    assertTrue(perform.getResolvedException().getMessage().contains("fournir un"));
 
   }
 }
