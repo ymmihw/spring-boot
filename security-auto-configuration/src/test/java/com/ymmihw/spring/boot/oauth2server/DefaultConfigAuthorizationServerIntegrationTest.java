@@ -1,17 +1,14 @@
 package com.ymmihw.spring.boot.oauth2server;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static java.util.Arrays.asList;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsResourceDetails;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.test.context.junit4.SpringRunner;
-import static java.util.Arrays.asList;
-import static org.junit.Assert.assertNotNull;
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT,
     classes = SpringBootAuthorizationServerApplication.class, properties = {
         "security.oauth2.client.client-id=client", "security.oauth2.client.client-secret=baeldung"})

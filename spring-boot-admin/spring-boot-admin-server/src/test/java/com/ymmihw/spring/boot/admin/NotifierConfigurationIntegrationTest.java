@@ -1,18 +1,15 @@
 package com.ymmihw.spring.boot.admin;
 
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
 import de.codecentric.boot.admin.server.notify.Notifier;
 import de.codecentric.boot.admin.server.notify.RemindingNotifier;
 import de.codecentric.boot.admin.server.notify.filter.FilteringNotifier;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = {SpringBootAdminServerApplication.class}, webEnvironment = NONE)
 public class NotifierConfigurationIntegrationTest {
 
