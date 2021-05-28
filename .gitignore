@@ -4,3 +4,5 @@
 rebel.xml
 .classpath
 .project
+/.idea
+*.iml
