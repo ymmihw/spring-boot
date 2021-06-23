@@ -47,7 +47,7 @@
     </executions>
     <configuration>
      <sources>
-      <source>${project.basedir}/src/main/resources/</source>
+      <source>${project.basedir}/src/main/resources/soap/</source>
      </sources>
      <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
      <clearOutputDir>false</clearOutputDir>
