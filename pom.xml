@@ -74,5 +74,6 @@
   <module>spring-boot-servletcomponentscan</module>
   <module>spring-boot-test-rest-template</module>
   <module>sql-logging</module>
+  <module>spring-boot-xxljob</module>
  </modules>
 </project>
